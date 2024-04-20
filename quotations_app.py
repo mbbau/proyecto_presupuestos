@@ -26,7 +26,7 @@ presupuesto_estimado = st.text_input(
 fecha_de_presupuesto = st.date_input(
     "Fecha de Presupuesto", 
     value = "today", 
-    label_visibility= "hiden"
+    label_visibility= "hidden"
     )
 
 nombre_de_paciente = st.text_input(
