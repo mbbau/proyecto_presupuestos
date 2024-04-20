@@ -1,9 +1,35 @@
 import streamlit as st
 import pandas as pd
 
+from streamlit.components.v1 import html
+
+# Insertar CSS para mejorar la impresión
+css_to_inject = """
+<style>
+@media print {
+    html, body {
+        width: 210mm;
+        height: 297mm;
+    }
+    .reportview-container .main .block-container {
+        max-width: 210mm;
+        padding: 20mm;
+    }
+    .reportview-container .main {
+        color: black; /* Cambia el color de la fuente para la impresión si es necesario */
+    }
+    /* Aquí puedes añadir estilos específicos para la impresión */
+}
+</style>
+"""
+
+# Inyectar el CSS en la app
+html(css_to_inject)
+
 
 st.set_page_config(
-    page_title= "Quotations_project"
+    page_title= "Quotations_project",
+    layout= 'wide'
 )
 
 columna_logo = st.columns((0.7,0.3))
@@ -52,3 +78,7 @@ with columnas_para_datos_iniciales[1]:
 #    options = df2.procedimiento.unique(),
 #    label_visibility = "hidden"
 #)
+
+
+# Botón para imprimir la página (ejecuta un script de JavaScript para imprimir la página)
+st.button("Imprimir Reporte", on_click=lambda: html("<script>window.print()</script>", height=0))
