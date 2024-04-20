@@ -6,32 +6,7 @@ st.set_page_config(
     layout= 'wide'
 )
 
-from streamlit.components.v1 import html
-
-# Insertar CSS para mejorar la impresión
-css_to_inject = """
-<style>
-@media print {
-    html, body {
-        width: 210mm;
-        height: 297mm;
-    }
-    .reportview-container .main .block-container {
-        max-width: 210mm;
-        padding: 20mm;
-    }
-    .reportview-container .main {
-        color: black; /* Cambia el color de la fuente para la impresión si es necesario */
-    }
-    /* Aquí puedes añadir estilos específicos para la impresión */
-}
-</style>
-"""
-
-# Inyectar el CSS en la app
-html(css_to_inject)
-
-
+st.empty()
 columna_logo = st.columns((0.7,0.3))
 with columna_logo[1]:
     st.image('logo clinica.png')
