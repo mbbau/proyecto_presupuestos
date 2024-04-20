@@ -43,11 +43,17 @@ with columnas_para_datos_iniciales[1]:
         value = None
         )
 
+nombre_medico_futuro = st.markdown("**ACA IRA UN SELECT BOX PARA SELECCIONAR EL NOMBRE DEL MÉDICO**")
 #medico = st.selectbox(
 #    label = "Medico",
 #    options = df.medico.unique(),
 #    label_visibility = "hidden"
 #)
+
+columnas_procedimiento = st.columns((0.35,0.3,0.35))
+with columnas_procedimiento[1]:
+    st.markdown("**Presupuesto Estimado:**")
+    st.markdown("**ACA IRA UN SELECT BOX PARA SELECCIONAR EL NOMBRE DEL PROCEDIMIENTO**")
 #procedimiento = st.selectbox(
 #    label = "Medico",
 #    options = df2.procedimiento.unique(),
