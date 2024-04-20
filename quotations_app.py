@@ -17,34 +17,39 @@ df = pd.DataFrame()
 
 # Ahora genero las variables que serán ingresadas por el usuario al momento de generar el presupuesto.
 
-columnas_para_datos_iniciales = st.columns((0.2,0.2,0.6))
+columnas_para_datos_iniciales = st.columns((0.5,0.5))
 
-  
-presupuesto_estimado = st.text_input(
-    "**Presupuesto Estimado NO.**",
-    value = None
-    )
+with columnas_para_datos_iniciales[0]:
+    presupuesto_estimado = st.text_input(
+        "**Presupuesto Estimado NO.**",
+        value = None
+        )
+    
+with columnas_para_datos_iniciales[1]:
+    fecha_de_presupuesto = st.date_input(
+        "**Fecha de Presupuesto**", 
+        value = "today"
+        )
 
-fecha_de_presupuesto = st.date_input(
-    "Fecha de Presupuesto", 
-    value = "today", 
-    label_visibility= "hidden"
-    )
-
-nombre_de_paciente = st.text_input(
-    "Nombre de Paciente",
-    value = None, 
-    label_visibility= "hidden"
-    )
-
-indentificacion_de_paciente = st.text_input(
-    "Identificación de Paciente",
-    value = None, 
-    label_visibility= "hidden"
-    )
+with columnas_para_datos_iniciales[0]:
+    nombre_de_paciente = st.text_input(
+        "**Nombre de Paciente**",
+        value = None
+        )
+    
+with columnas_para_datos_iniciales[1]:
+    indentificacion_de_paciente = st.text_input(
+        "**Identificación de Paciente**",
+        value = None
+        )
 
 #medico = st.selectbox(
 #    label = "Medico",
 #    options = df.medico.unique(),
+#    label_visibility = "hidden"
+#)
+#procedimiento = st.selectbox(
+#    label = "Medico",
+#    options = df2.procedimiento.unique(),
 #    label_visibility = "hidden"
 #)
