@@ -19,17 +19,11 @@ df = pd.DataFrame()
 
 columnas_para_datos_iniciales = st.columns((0.2,0.2,0.6))
 
-with columnas_para_datos_iniciales[0]:
-    presupuesto = "Presupuesto estimado NO."
-    st.markdown(f"<div style='text-align: right; display: flex; align-items: center; height: 100%;'>"
-                f"{presupuesto}</div>", unsafe_allow_html=True)
-
-with columnas_para_datos_iniciales[1]:    
-    presupuesto_estimado = st.text_input(
-        "Presupuesto Estimado",
-        value = None, 
-        label_visibility= "hidden"
-        )
+  
+presupuesto_estimado = st.text_input(
+    "**Presupuesto Estimado NO.**",
+    value = None
+    )
 
 fecha_de_presupuesto = st.date_input(
     "Fecha de Presupuesto", 
