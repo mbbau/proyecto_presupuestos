@@ -20,10 +20,9 @@ df = pd.DataFrame()
 columnas_para_datos_iniciales = st.columns((0.2,0.2,0.6))
 
 with columnas_para_datos_iniciales[0]:
-    st.markdown("")
-    st.markdown(
-        "**Presupuesto estimado NO.**"
-    )
+    st.markdown(f"<div style='text-align: right; display: flex; align-items: center; height: 100%;'>"
+                f"{"Presupuesto estimado NO."}</div>", unsafe_allow_html=True)
+
 with columnas_para_datos_iniciales[1]:    
     presupuesto_estimado = st.text_input(
         "Presupuesto Estimado",
