@@ -1,6 +1,11 @@
 import streamlit as st
 import pandas as pd
 
+st.set_page_config(
+    page_title= "Quotations_project",
+    layout= 'wide'
+)
+
 from streamlit.components.v1 import html
 
 # Insertar CSS para mejorar la impresión
@@ -26,11 +31,6 @@ css_to_inject = """
 # Inyectar el CSS en la app
 html(css_to_inject)
 
-
-st.set_page_config(
-    page_title= "Quotations_project",
-    layout= 'wide'
-)
 
 columna_logo = st.columns((0.7,0.3))
 with columna_logo[1]:
