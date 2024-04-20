@@ -17,11 +17,16 @@ df = pd.DataFrame()
 
 # Ahora genero las variables que serán ingresadas por el usuario al momento de generar el presupuesto.
 
-presupuesto_estimado = st.text_input(
-    "Presupuesto Estimado",
-    value = None, 
-    label_visibility= "hidden"
-    )
+columnas_para_datos_iniciales = st.columns((0.2,0.2,0.6))
+
+with columnas_para_datos_iniciales[0]:
+    st.text("*Presupuesto estimado NO. *")
+with columnas_para_datos_iniciales[1]:    
+    presupuesto_estimado = st.text_input(
+        "Presupuesto Estimado",
+        value = None, 
+        label_visibility= "hidden"
+        )
 
 fecha_de_presupuesto = st.date_input(
     "Fecha de Presupuesto", 
@@ -35,9 +40,9 @@ nombre_de_paciente = st.text_input(
     label_visibility= "hidden"
     )
 
-indentificacion_de_paciente = st.number_input(
+indentificacion_de_paciente = st.text_input(
     "Identificación de Paciente",
-    placeholder = 999999999, 
+    value = None, 
     label_visibility= "hidden"
     )
 
