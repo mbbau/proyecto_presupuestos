@@ -13,7 +13,7 @@ with columna_logo[1]:
 
 st.header(body = "", divider='blue')
 
-df = pd.DataFrame(columns="medico")
+df = pd.DataFrame()
 
 # Ahora genero las variables que serán ingresadas por el usuario al momento de generar el presupuesto.
 
