@@ -54,6 +54,14 @@ with columnas_para_datos_iniciales[1]:
 #    label_visibility = "hidden"
 #)
 
+st.write("""
+        Estimado (a) cliente:
+        
+         Para el Hospital Clínica Bíblica es un gusto saludarlo (a) y atender su requerimiento en cuanto a nuestros costos de servicios
+         hospitalarios, en los cuales le ofrecemos una alta tecnología, profesionales de la salud debidamente calificados y una vasta
+         experiencia de más de 93 años.
 
-# Botón para imprimir la página (ejecuta un script de JavaScript para imprimir la página)
-st.button("Imprimir Reporte", on_click=lambda: html("<script>window.print()</script>", height=0))
+         Los costos de referencia para el procedimiento solicitado están basados en datos actualiados en cuanto a los últimos que se
+         han realizado en nuestro hospital, y son los siguientes:
+
+         """)
