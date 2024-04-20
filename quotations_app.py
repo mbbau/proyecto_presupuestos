@@ -6,7 +6,6 @@ st.set_page_config(
     layout= 'wide'
 )
 
-st.empty()
 columna_logo = st.columns((0.7,0.3))
 with columna_logo[1]:
     st.image('logo clinica.png')
@@ -50,7 +49,7 @@ nombre_medico_futuro = st.markdown("**ACA IRA UN SELECT BOX PARA SELECCIONAR EL 
 #    label_visibility = "hidden"
 #)
 
-columnas_procedimiento = st.columns((0.35,0.3,0.35))
+columnas_procedimiento = st.columns((0.3,0.3,0.3))
 with columnas_procedimiento[1]:
     st.markdown("**Presupuesto Estimado:**")
     st.markdown("**ACA IRA UN SELECT BOX PARA SELECCIONAR EL NOMBRE DEL PROCEDIMIENTO**")
@@ -60,14 +59,14 @@ with columnas_procedimiento[1]:
 #    label_visibility = "hidden"
 #)
 
-st.write("""
-        Estimado (a) cliente:
+st.markdown("""
+        Estimado (a) cliente:  
         
-         Para el Hospital Clínica Bíblica es un gusto saludarlo (a) y atender su requerimiento en cuanto a nuestros costos de servicios
-         hospitalarios, en los cuales le ofrecemos una alta tecnología, profesionales de la salud debidamente calificados y una vasta
-         experiencia de más de 93 años.
-
-         Los costos de referencia para el procedimiento solicitado están basados en datos actualiados en cuanto a los últimos que se
-         han realizado en nuestro hospital, y son los siguientes:
+         Para el Hospital Clínica Bíblica es un gusto saludarlo (a) y atender su requerimiento en cuanto a nuestros costos de servicios  
+         hospitalarios, en los cuales le ofrecemos una alta tecnología, profesionales de la salud debidamente calificados y una vasta  
+         experiencia de más de 93 años.  
+           
+         Los costos de referencia para el procedimiento solicitado están basados en datos actualiados en cuanto a los últimos que se  
+         han realizado en nuestro hospital, y son los siguientes:  
 
          """)
