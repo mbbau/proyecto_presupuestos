@@ -3,11 +3,10 @@ import pandas as pd
 
 
 st.set_page_config(
-    page_title= "Quotations_project",
-    layout= "wide"
+    page_title= "Quotations_project"
 )
 
-columna_logo = st.columns((0.8,0.1))
+columna_logo = st.columns((0.7,0.3))
 with columna_logo[1]:
     st.image('logo clinica.png')
 
