@@ -49,6 +49,9 @@ nombre_medico_futuro = st.markdown("**ACA IRA UN SELECT BOX PARA SELECCIONAR EL 
 #    label_visibility = "hidden"
 #)
 
+## ACA DEBE IR CONVENIO.
+
+
 columnas_procedimiento = st.columns((0.3,0.3,0.3))
 with columnas_procedimiento[1]:
     st.markdown("**Presupuesto Estimado:**")
@@ -62,11 +65,49 @@ with columnas_procedimiento[1]:
 st.markdown("""
         Estimado (a) cliente:  
         
-         Para el Hospital Clínica Bíblica es un gusto saludarlo (a) y atender su requerimiento en cuanto a nuestros costos de servicios  
-         hospitalarios, en los cuales le ofrecemos una alta tecnología, profesionales de la salud debidamente calificados y una vasta  
-         experiencia de más de 93 años.  
-           
-         Los costos de referencia para el procedimiento solicitado están basados en datos actualiados en cuanto a los últimos que se  
-         han realizado en nuestro hospital, y son los siguientes:  
+         Para el Hospital Clínica Bíblica es un gusto saludarlo (a) y atender su requerimiento en cuanto a nuestros costos de servicios
+         hospitalarios, en los cuales le ofrecemos una alta tecnología, profesionales de la salud debidamente calificados y una vasta
+         experiencia de más de 93 años.
+    
+         Los costos de referencia para el procedimiento solicitado están basados en datos actualiados en cuanto a los últimos que se
+         han realizado en nuestro hospital, y son los siguientes:
 
          """)
+
+
+
+from docx import Document
+from io import BytesIO
+
+# Función para generar el documento de Word
+def create_doc(medico, procedimiento, convenio):
+    doc = Document()
+    doc.add_heading('Presupuesto Médico', 0)
+    doc.add_paragraph(f'Médico: {medico}')
+    doc.add_paragraph(f'Procedimiento: {procedimiento}')
+    doc.add_paragraph(f'Convenio: {convenio}')
+    # Aquí podrías agregar más lógica para añadir contenido basado en los inputs
+    return doc
+
+# Función para convertir el documento a un stream de bytes
+def convert_to_bytes(doc):
+    buf = BytesIO()
+    doc.save(buf)
+    buf.seek(0)
+    return buf.getvalue()
+
+# Crear la aplicación de Streamlit
+st.title('Generador de Presupuestos Médicos')
+
+# Recolectar inputs del usuario
+medico = st.text_input('Nombre del Médico')
+procedimiento = st.text_input('Nombre del Procedimiento')
+convenio = st.text_input('Convenio (si aplica)')
+
+if st.button('Generar Documento'):
+    doc = create_doc(medico, procedimiento, convenio)
+    doc_bytes = convert_to_bytes(doc)
+    st.download_button(label="Descargar Presupuesto",
+                       data=doc_bytes,
+                       file_name="presupuesto.docx",
+                       mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document")
