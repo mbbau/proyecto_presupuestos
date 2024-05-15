@@ -86,7 +86,7 @@ def create_doc(medico, procedimiento, convenio):
     doc.add_paragraph(f'Médico: {medico}')
     doc.add_paragraph(f'Procedimiento: {procedimiento}')
     doc.add_paragraph(f'Convenio: {convenio}')
-    # Aquí podrías agregar más lógica para añadir contenido basado en los inputs
+
     return doc
 
 # Función para convertir el documento a un stream de bytes
